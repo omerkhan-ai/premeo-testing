@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - PremEO Store</title>
+    <!-- Assuming your main stylesheet is named styles.css and is in the same directory -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* --- Your existing CSS styles from the file go here --- */
+        /* For brevity, I'm not repeating them, but they should be included */
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #B8860B;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #2a2a2a;
+            --light-gray: #3a3a3a;
+            --white: #f5f5f5;
+            --accent: #1e1e1e;
+            --shadow: 0 8px 30px rgba(0,0,0,0.5);
+        }
+        /* --- Add these CSS rules for specific colors --- */
+        .color-option.red { background-color: #e74c3c; border-color: #c0392b; }
+        .color-option.blue { background-color: #3498db; border-color: #2980b9; }
+        .color-option.green { background-color: #2ecc71; border-color: #27ae60; }
+        .color-option.black { background-color: #343a40; border-color: #212529; }
+        .color-option.silver { background-color: #bdc3c7; border-color: #95a5a6; }
+        .color-option.purple { background-color: #9b59b6; border-color: #8e44ad; }
+        .color-option.orange { background-color: #e67e22; border-color: #d35400; }
+        .color-option.gold { background-color: #D4AF37; border-color: #b8860b; }
+        .color-option.lime { background-color: #32CD32; border-color: #228B22; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--black); color: var(--white); line-height: 1.6; }
+
+        /* Header Styles */
+        header { background-color: var(--black); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
+        .top-bar { background-color: var(--gold); color: var(--black); padding: 8px 0; font-size: 14px; text-align: center; }
+        .container { width: 90%; max-width: 1400px; margin: 0 auto; }
+        .main-header { padding: 20px 0; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; }
+        .logo h1 { color: var(--white); font-size: 32px; letter-spacing: 2px; }
+        .logo span { color: var(--gold); }
+        .search-bar { flex: 1; margin: 0 30px; position: relative; }
+        .search-bar input { width: 100%; padding: 14px 20px; border-radius: 30px; border: 1px solid var(--light-gray); background: var(--dark-gray); color: var(--white); font-size: 16px; }
+        .search-bar button { position: absolute; right: 5px; top: 5px; background: var(--gold); color: var(--black); border: none; padding: 9px 25px; border-radius: 30px; cursor: pointer; font-weight: bold; }
+        .header-icons { display: flex; gap: 25px; }
+        .icon-item { position: relative; cursor: pointer; }
+        .icon-item i { font-size: 26px; color: var(--white); }
+        .cart-count { position: absolute; top: -8px; right: -8px; background: var(--gold); color: var(--black); border-radius: 50%; width: 22px; height: 22px; display: flex; justify-content: center; align-items: center; font-size: 12px; font-weight: bold; }
+        nav { background-color: var(--dark-gray); border-top: 1px solid var(--light-gray); }
+        .nav-links { display: flex; list-style: none; justify-content: center; }
+        .nav-links li { position: relative; }
+        .nav-links a { display: block; color: var(--white); text-decoration: none; padding: 18px 25px; transition: all 0.3s ease; font-weight: 500; letter-spacing: 1px; }
+        .nav-links a:hover { background-color: var(--gold); color: var(--black); }
+        .nav-links a.active { background-color: var(--gold); color: var(--black); }
+
+        /* Contact Page Styles */
+        .contact-page { padding: 50px 20px; max-width: 1200px; margin: 0 auto; }
+        .contact-header { text-align: center; margin-bottom: 40px; }
+        .contact-header h1 { color: #d4af37; font-size: 2.5em; margin-bottom: 15px; }
+        .contact-header p { font-size: 1.2em; color: #aaa; }
+        .contact-content { display: flex; flex-wrap: wrap; gap: 40px; }
+        .contact-info-section { flex: 1; min-width: 300px; background-color: #2c2c2c; padding: 30px; border-radius: 5px; border: 1px solid #444; }
+        .contact-info-section h2 { color: #d4af37; margin-bottom: 20px; font-size: 1.8em; }
+        .contact-detail { display: flex; align-items: flex-start; margin-bottom: 25px; }
+        .contact-detail i { font-size: 1.5em; color: #d4af37; margin-right: 15px; min-width: 30px; }
+        .contact-detail div h3 { margin: 0 0 5px 0; color: #ffffff; font-size: 1.1em; }
+        .contact-detail div p, .contact-detail div a { margin: 0; color: #aaa; text-decoration: none; }
+        .contact-detail div a:hover { color: #d4af37; text-decoration: underline; }
+        .social-links-contact { display: flex; gap: 20px; margin-top: 15px; }
+        .social-links-contact a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #333; border-radius: 50%; color: #d4af37; transition: all 0.3s ease; font-size: 1.2em; border: 1px solid #444; }
+        .social-links-contact a:hover { background: #d4af37; color: #000; transform: translateY(-3px); }
+        .contact-form-section { flex: 2; min-width: 300px; background-color: #2c2c2c; padding: 30px; border-radius: 5px; border: 1px solid #444; }
+        .contact-form-section h2 { color: #d4af37; margin-bottom: 20px; font-size: 1.8em; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: #ffffff; font-weight: bold; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #444; background-color: #333; color: white; font-size: 1em; box-sizing: border-box; }
+        .form-group textarea { resize: vertical; min-height: 150px; }
+        .submit-btn { padding: 12px 30px; background-color: #d4af37; color: black; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; font-weight: bold; transition: background-color 0.3s ease; }
+        .submit-btn:hover { background-color: #fff; }
+        .map-section { margin-top: 40px; width: 100%; }
+        .map-section h2 { color: #d4af37; margin-bottom: 20px; font-size: 1.8em; }
+        .map-container { height: 400px; border-radius: 5px; overflow: hidden; border: 1px solid #444; background-color: #333; }
+        .map-container iframe { width: 100%; height: 100%; border: none; }
+
+        /* Footer Styles */
+        footer { background: var(--black); color: var(--white); padding: 80px 0 30px; border-top: 1px solid var(--light-gray); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 50px; }
+        .footer-column h3 { margin-bottom: 25px; position: relative; padding-bottom: 15px; font-size: 22px; }
+        .footer-column h3::after { content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background: var(--gold); }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 15px; }
+        .footer-links a { color: #aaa; text-decoration: none; transition: color 0.3s ease; font-size: 16px; }
+        .footer-links a:hover { color: var(--gold); }
+        .contact-info { list-style: none; }
+        .contact-info li { margin-bottom: 20px; display: flex; align-items: flex-start; }
+        .contact-info i { margin-right: 15px; color: var(--gold); font-size: 20px; min-width: 25px; }
+        .social-links { display: flex; gap: 20px; margin-top: 25px; }
+        .social-links a { display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: var(--dark-gray); border-radius: 50%; color: var(--white); transition: all 0.3s ease; font-size: 20px; border: 1px solid var(--light-gray); }
+        .social-links a:hover { background: var(--gold); color: var(--black); transform: translateY(-5px); }
+        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid var(--light-gray); font-size: 15px; color: #777; }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-content { flex-direction: column; }
+            .contact-header h1 { font-size: 2em; }
+            .contact-header p { font-size: 1em; }
+            .header-content { flex-direction: column; gap: 20px; }
+            .search-bar { display: none; }
+            .nav-links { display: none; }
+        }
+
+        /* --- Mobile Menu Styles --- */
+        .mobile-header-icons { display: none; gap: 15px; }
+        .menu-toggle { display: none; font-size: 26px; cursor: pointer; z-index: 1001; }
+        #mobile-menu-container { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--dark-gray); z-index: 1000; flex-direction: column; padding: 20px; box-sizing: border-box; overflow-y: auto; }
+        #mobile-menu-container.active { display: flex; }
+        .menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid var(--light-gray); }
+        .menu-close { background: none; border: none; font-size: 40px; color: var(--white); cursor: pointer; padding: 0; margin: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+        .mobile-nav .nav-links { flex-direction: column; align-items: center; width: 100%; }
+        .mobile-nav .nav-links li { width: 100%; text-align: center; margin-bottom: 15px; }
+        .mobile-nav .nav-links a { display: block; padding: 15px; font-size: 20px; border-radius: 5px; }
+        .mobile-header-icons { display: none; gap: 15px; }
+        .menu-toggle { display: none; font-size: 26px; cursor: pointer; z-index: 1001; }
+        .mobile-search-trigger { display: none; font-size: 26px; cursor: pointer; }
+        .mobile-search-bar { display: none; margin-top: 20px; position: relative; width: 100%; }
+        .mobile-search-bar.active { display: block; }
+        .mobile-search-bar input { width: 100%; padding: 14px 20px; border-radius: 30px; border: 1px solid var(--light-gray); background: var(--black); color: var(--white); font-size: 16px; }
+        .mobile-search-bar button { position: absolute; right: 5px; top: 5px; background: var(--gold); color: var(--black); border: none; padding: 9px 25px; border-radius: 30px; cursor: pointer; font-weight: bold; }
+        @media (max-width: 768px) {
+            .header-content { flex-wrap: wrap; position: relative; }
+            .search-bar { display: none; }
+            .mobile-header-icons { display: flex; align-items: center; }
+            .menu-toggle { display: block; }
+            .main-header { padding: 15px 0; }
+            .logo h1 { font-size: 28px; }
+            .top-bar { font-size: 12px; padding: 5px 0; }
+        }
+        /* --- End Mobile Menu Styles --- */
+
+        /* Form Message Styles */
+        #form-message {
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+        #form-message.success {
+            background-color: rgba(40, 167, 69, 0.2);
+            border: 1px solid #28a745;
+            color: #28a745;
+        }
+        #form-message.error {
+            background-color: rgba(220, 53, 69, 0.2);
+            border: 1px solid #dc3545;
+            color: #dc3545;
+        }
+        #form-message.loading {
+            background-color: rgba(0, 123, 255, 0.2);
+            border: 1px solid #007bff;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <div class="container main-header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>PREM<span>EO</span></h1>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for rackets, accessories...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-icons">
+                    <div class="icon-item"><a href="index.html"><i class="fas fa-home"></i></a></div>
+                    <div class="icon-item" id="cart-icon-header">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ul class="nav-links">
+                    <li><a href="index.html" id="home-link-nav">Home</a></li>
+                    <li><a href="#" id="padel-link-nav">Padel Rackets</a></li>
+                    <li><a href="#" id="pickleball-link-nav">Pickleball Rackets</a></li>
+                    <li><a href="#" id="accessories-link-nav">Accessories</a></li>
+                    <li><a href="#" id="deals-link-nav">Deals</a></li>
+                    <li><a href="contact.html" class="active" id="contact-link-nav">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- End Header/Navigation -->
+
+    <main class="contact-page">
+        <div class="contact-header">
+            <h1>Get In Touch</h1>
+            <p>We'd love to hear from you! Send us a message and we'll respond as soon as possible.</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info-section">
+                <h2>Contact Information</h2>
+                <div class="contact-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Our Location</h3>
+                        <p>daska road near city housing, BOLA GEMA PAKISTAN</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Phone Number</h3>
+                        <p>+92 3266141717</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email Address</h3>
+                        <a href="mailto:info@premeo.pk">info@premeo.pk</a>
+                        <br>
+                        <a href="mailto:premeopadels@gmail.com">premeopadels@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>Business Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        <p>Saturday - Sunday: 10:00 AM - 4:00 PM</p>
+                    </div>
+                </div>
+                <h3 style="margin-top: 30px; color: #d4af37;">Follow Us</h3>
+                <div class="social-links-contact">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="contact-form-section">
+                <h2>Send Us a Message</h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">Full Name *</label>
+                        <input type="text" id="contact-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email Address *</label>
+                        <input type="email" id="contact-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-subject">Subject</label>
+                        <input type="text" id="contact-subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message *</label>
+                        <textarea id="contact-message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                <p id="form-message"></p> <!-- For feedback -->
+            </div>
+        </div>
+        <div class="map-section">
+            <h2>Our Location</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.849598909993!2d74.33921537540284!3d32.49370997382159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391eea6b7e6f8d4f%3A0xd9b6b6b6b6b6b6b6!2sDaska%20Road%2C%20Sialkot%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1731840000000!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h2 class="gold-text">PREM<span>EO</span></h2>
+                    <p>Your premier destination for luxury padel and pickleball equipment in Pakistan. Authentic brands, competitive prices, and fast delivery.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Padel Rackets</a></li>
+                        <li><a href="#">Pickleball Rackets</a></li>
+                        <li><a href="#">Balls</a></li>
+                        <li><a href="#">Grips & Accessories</a></li>
+                        <li><a href="#">Bags & Cases</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i><span>daska road near city housing ,BOLA GEMA PAKISTAN</span></li>
+                        <li><i class="fas fa-phone"></i><span>+92 3266141717</span></li>
+                        <li><i class="fas fa-envelope"></i><span>info@premeo.pk</span></li>
+                        <li><i class="fas fa-clock"></i><span>Mon-Fri: 9AM - 6PM, Sat-Sun: 10AM - 4PM</span></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">&copy; 2024 PremEO Store. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault(); // Prevent default form submission
+
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    const data = {
+                        name: formData.get('name').trim(),
+                        email: formData.get('email').trim(),
+                        subject: formData.get('subject').trim(),
+                        message: formData.get('message').trim()
+                    };
+
+                    // Basic client-side validation
+                    if (!data.name || !data.email || !data.message) {
+                        showFormMessage('Please fill in all required fields (*).', 'error');
+                        return;
+                    }
+
+                    // Validate email format (basic check)
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(data.email)) {
+                        showFormMessage('Please enter a valid email address.', 'error');
+                        return;
+                    }
+
+                    // Show loading message
+                    showFormMessage('Sending your message...', 'loading');
+                    // Disable submit button to prevent multiple submissions
+                    const submitBtn = contactForm.querySelector('.submit-btn');
+                    const originalBtnText = submitBtn.textContent;
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+
+                    try {
+                        // Replace 'YOUR_BACKEND_ENDPOINT_URL' with your actual backend URL
+                        const response = await fetch('https://premeo-backend.onrender.com/api/contact', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data),
+                        });
+
+                        if (response.ok) {
+                            // Success! Show success message
+                            showFormMessage('Thank you for your message! We will get back to you soon.', 'success');
+                            // Reset the form
+                            contactForm.reset();
+                        } else {
+                            // Handle server errors
+                            const errorData = await response.json().catch(() => ({}));
+                            const errorMsg = errorData.message || 'Failed to send message. Please try again later.';
+                            showFormMessage(`Error: ${errorMsg}`, 'error');
+                        }
+                    } catch (error) {
+                        // Handle network errors
+                        console.error('Error submitting form:', error);
+                        showFormMessage('Network error. Please check your connection and try again.', 'error');
+                    } finally {
+                        // Re-enable submit button
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalBtnText;
+                    }
+                });
+            }
+
+            function showFormMessage(text, type) {
+                if (formMessage) {
+                    formMessage.textContent = text;
+                    formMessage.className = type; // Apply 'success', 'error', or 'loading' class
+                    formMessage.style.display = 'block';
+
+                    // Optional: Hide success message after a few seconds
+                    if (type === 'success') {
+                        setTimeout(() => {
+                            formMessage.style.display = 'none';
+                        }, 5000);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
