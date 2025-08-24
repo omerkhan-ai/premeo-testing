@@ -9,7 +9,8 @@
 <link rel="manifest" href="/site.webmanifest">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Store - Checkout</title>
+    <title>PREMEO - Premium Padel & Pickleball Rackets in Pakistan | Buy Now</title>
+    <meta name="description" content="Shop authentic Padel & Pickleball rackets in Pakistan. PREMEO offers luxury equipment from top brands. Fast shipping & great prices. Find your perfect racket today!">
     <!-- ... other head elements ... -->
 
     <!-- Add this inside <head> or before </body> -->
@@ -27,7 +28,7 @@
    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PREMEO - Luxury Padel & Pickleball Rackets</title>
+    <title>PREMEO - performance Padel & Pickleball Rackets</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -210,33 +211,100 @@
         }
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(180, 180, 180, 0.8), rgba(0, 0, 0, 0.9)), url('/Lucid_Realism_A_sleek_modern_hero_section_image_for_a_premium__0.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 600px;
-            display: flex;
-            align-items: center;
-            color: var(--black);
-            text-align: center;
-        }
+    position: relative;
+    overflow: hidden;
+    /* Remove the static background image and gradient from here */
+    /* background: linear-gradient(rgba(180, 180, 180, 0.5), rgba(102, 102, 102, 0.5)), url('/test\ 1.jpeg'); */
+    /* Keep height, display, align-items, color, text-align */
+    height: 600px;
+    display: flex;
+    align-items: center;
+    color: var(--black); /* Default color, but text will have its own styles */
+    text-align: center;
+    /* Add a fallback background color in case images fail */
+    
+}
+
+        /* Slideshow container */
+.hero-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place slides behind content */
+}
+
+/* Individual slide */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Smooth fade transition */
+}
+
+/* Active slide */
+.slide.active {
+  opacity: 1;
+}
+
+/* The actual background image element */
+.hero-slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    /* Ensure no gradient is applied directly here unless intended for all images */
+    /* If you previously added a gradient here, remove it */
+    /* background-image: linear-gradient(rgba(...), rgba(...)), url('...'); <-- REMOVE THIS if present */
+}
+
+/* --- REMOVE OR COMMENT OUT THIS ENTIRE BLOCK --- */
+/*
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(56, 56, 56, 0.5), rgba(255, 255, 255, 0.5)); 
+    z-index: -1; 
+}
+*/
+/* --- END REMOVE BLOCK --- */
         .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    position: relative;
+    z-index: 2; /* Ensure it's above the slides (z-index: -1) */
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    /* --- NEW/UPDATED TEXT STYLING FOR READABILITY --- */
+    /* Add a text shadow for glow/outline effect */
+   
+}
         .hero h2 {
-            font-size: 56px;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+    font-size: 56px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    /* Ensure the text shadow is inherited or applied */
+    /* text-shadow: inherit; */ /* Usually inherits from parent, but you can specify */
+}
         .hero p {
-            font-size: 22px;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    font-size: 22px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    /* Ensure the text shadow is inherited or applied */
+    /* text-shadow: inherit; */
+}
         .btn {
             display: inline-block;
             background-color: var(--black);
@@ -1354,6 +1422,42 @@
 #discount-row {
     font-weight: bold; /* Add this if it's not already present inline */
 }
+/* --- Floating WhatsApp Icon Styles --- */
+
+.whatsapp-float {
+    display: none; /* Hidden by default on desktop */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--white); /* Use your theme's white */
+    color: var(--black); /* Use your theme's black for the icon */
+    border-radius: 50%;
+    box-shadow: var(--shadow); /* Use your existing shadow variable */
+    text-align: center;
+    line-height: 60px; /* Vertically center the icon */
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 9999; /* Ensure it's above most other elements */
+    border: 1px solid var(--light-gray); /* Optional: subtle border */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6); /* Enhance shadow on hover */
+    /* You could also change background color here if desired, e.g., var(--light-gray) */
+}
+
+/* Show the WhatsApp icon only on mobile devices (768px width and below) */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        display: block; /* Make it visible on mobile */
+    }
+}
+
+/* --- End Floating WhatsApp Icon Styles --- */
 /* ---------------------------------------- */
         /* Responsive */
         @media (max-width: 992px) {
@@ -1982,14 +2086,15 @@
                     <button><i class="fas fa-search"></i></button>
                 </div>
                 <div class="header-icons">
-                    <div class="icon-item">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="icon-item" id="cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">0</span>
-                    </div>
-                </div>
+    <!-- Changed div to 'a' tag and added href -->
+    <a href="contact.html" class="icon-item" title="Contact Us">
+        <i class="fas fa-user"></i>
+         </a>
+         <div class="icon-item" id="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+        </div>
+        </div>
             </div>
         </div>
         <nav>
@@ -2008,16 +2113,26 @@
 
     
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Excellence in Every Stroke</h2>
-            <p>Premium padel and pickleball rackets crafted for champions. Experience the difference with PREMEO.</p>
-            <div>
-                <a href="#products" class="btn">Discover Collection</a>
-                <a href="about.html" class="btn btn-secondary">About Us</a>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+  <div class="hero-slideshow">
+    <!-- Add your desired hero images here. Make sure paths are correct. -->
+    <div class="slide fade">
+      <div class="hero-slide" style="background-image: url('hero1.jpeg');"></div>
+    </div>
+    <div class="slide fade">
+      <div class="hero-slide" style="background-image: url('hero2.jpg');"></div>
+    </div>
+    <div class="slide fade">
+      <div class="hero-slide" style="background-image: url('hero3.jpeg');"></div>
+    </div>
+    <!-- Add more slides as needed -->
+  </div>
+  <div class="hero-content">
+    <h2>Excellence in Every Stroke</h2>
+    
+    <div><a href="#products" class="btn">Discover Collection</a></div>
+  </div>
+</section>
     <!-- Categories -->
     <section class="categories-section">
         <div class="container">
@@ -2030,7 +2145,7 @@
                     <div class="category-info">
                         <h3>Padel Rackets</h3>
                         <p>Professional & casual rackets</p>
-                        <a href="padel.html" class="category-btn" id="view-padel">View Collection</a>
+                        <a href="#" class="category-btn" id="view-padel">View Collection</a>
                     </div>
                 </div>
                 <div class="category-card">
@@ -2040,7 +2155,7 @@
                     <div class="category-info">
                         <h3>Pickleball Rackets</h3>
                         <p>All skill levels covered</p>
-                        <a href="pickle.html" class="category-btn" id="view-pickleball">View Collection</a>
+                        <a href="#" class="category-btn" id="view-pickleball">View Collection</a>
                     </div>
                 </div>
                 <div class="category-card">
@@ -2420,10 +2535,10 @@
             <div class="footer-grid">
                 <div class="footer-column">
                     <h3>PREMEO</h3>
-                    <p>Your premier destination for luxury padel and pickleball equipment in Pakistan. Authentic brands, competitive prices, and fast delivery.</p>
+                    <p>Your premier destination for Performance padel and pickleball equipment in Pakistan. Authentic brand based in USA,Production in Pakistan competitive prices, and fast delivery.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/premeopadel.pk/"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
@@ -2455,7 +2570,7 @@
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
-                            <span>+92 3266141717</span>
+                            <span>+92 329 5505882</span>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
@@ -2469,7 +2584,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 PREMEO. All rights reserved. | Luxury Sports Equipment for Pakistan</p>
+                <p>&copy; 2023 PREMEO. All rights reserved. | Performance Sports Equipment for Pakistan</p>
             </div>
         </div>
     </footer>
@@ -3577,7 +3692,47 @@ console.log("Debug - templateParams being sent:", templateParams);
     console.error("Place Order button not found in the DOM.");
 }
 // --- End Place Order Logic ---
+// --- Hero Carousel JavaScript ---
+document.addEventListener('DOMContentLoaded', function() {
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.hero .slide');
+  const totalSlides = slides.length;
 
+  // Function to show slides
+  function showSlides() {
+    // Hide all slides
+    for (let i = 0; i < totalSlides; i++) {
+      slides[i].classList.remove('active');
+    }
+
+    // Increment index
+    slideIndex++;
+    if (slideIndex > totalSlides) { slideIndex = 1; }
+
+    // Show the current slide
+    if (slides[slideIndex - 1]) { // Check if element exists
+      slides[slideIndex - 1].classList.add('active');
+    }
+
+    // Change slide every 5 seconds (5000 milliseconds)
+    setTimeout(showSlides, 5000);
+  }
+
+  // Start the slideshow
+  if (totalSlides > 0) {
+    showSlides();
+  }
+});
+// --- End Hero Carousel JavaScript ---
     </script>
+
+        <!-- Floating WhatsApp Icon (Visible only on mobile) -->
+    <a href="https://wa.me/+923295505882" target="_blank" class="whatsapp-float" title="Contact us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Existing scripts like Font Awesome, your main.js, etc. -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit-code.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
 </body>
 </html>
