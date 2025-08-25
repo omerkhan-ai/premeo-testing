@@ -2743,7 +2743,7 @@
                 id: 1,
                 name: "Attack 18K Carbon",
                 price: 24999,
-                image: "images/padel/18k/18k main.jpeg",
+                //image: "images/padel/18k/18k main.jpeg",
                 category: "padel",
                 quality: "Attack 18K Carbon",
                 description: "The pinnacle of padel racket technology. Featuring 18K full carbon construction for unmatched power and precision. Designed for professional players who demand the best performance.",
@@ -2755,21 +2755,30 @@
                     { name: "Core", value: "EVA Soft 36mm" },
                     { name: "Frame", value: "18K Carbon + Graphene" }
                 ],
-                images: [
-                    "images/padel/18k/18k main.jpeg",
-                    "images/padel/18k/18k (2).jpeg",
-                    "images/padel/18k/18k (3).jpeg",
-                    "images/padel/18k/18k (4).jpeg",
-                    "images/padel/18k/18k (5).jpeg",
-                    "images/padel/18k/18k (6).jpeg"
-                ],
-                colors: [ "black"]
-            },
+                 // --- NEW: Use colorVariants even for single color ---
+  colorVariants: {
+    // Using "default" is common for single-color items
+    // Alternatively, use the actual color if applicable, e.g., "black"
+    "default": [
+      "images/padel/18k/18k main.jpeg",
+      "images/padel/18k/18k (2).jpeg",
+      "images/padel/18k/18k (3).jpeg",
+      "images/padel/18k/18k (4).jpeg",
+      "images/padel/18k/18k (5).jpeg",
+      "images/padel/18k/18k (6).jpeg"
+      // ... include all images for this product here
+    ]
+    // Only one key because there's only one variant
+  },
+  // Define the colors array with the single key name
+  colors: ["default"] // Or ["black"] if you prefer
+  // --- END NEW ---
+},
             {
                 id: 2,
                 name: "Advanced Pro 3K Carbon",
                 price: 15999,
-                image: "images/padel/advanced pro/advanced pro main (lime).jpeg",
+                //image: "images/padel/advanced pro/advanced pro main (lime).jpeg",
                 category: "padel",
                 quality: "Advanced Pro 3K Carbon",
                 description: "Professional-grade racket with 3K full carbon construction. Perfect balance of power and control for intermediate to advanced players.",
@@ -2781,26 +2790,45 @@
                     { name: "Core", value: "EVA Medium 32mm" },
                     { name: "Frame", value: "3K Carbon + Fiberglass" }
                 ],
-                images: [
-                    "images/padel/advanced pro/advanced pro main (lime).jpeg",
-                    "images/padel/advanced pro/advanced pro (1).jpeg",
-                    "images/padel/advanced pro/advanced pro (12).jpeg",
-                    "images/padel/advanced pro/advanced pro (9).jpeg",
-                    "images/padel/advanced pro/advanced pro (5).jpeg",
-                    "images/padel/advanced pro/advanced pro (11).jpeg",
-                    "images/padel/advanced pro/advanced pro (6).jpeg",
-                    "images/padel/advanced pro/advanced pro (7).jpeg",
-                    "images/padel/advanced pro/advanced pro (8).jpeg",
-                    "images/padel/advanced pro/advanced pro (10).jpeg",
-                    "images/padel/advanced pro/advanced pro (3).jpeg",
-                ],
-                colors: [" lime", "orange",]
-            },
+                 // --- NEW: Color Variants Structure ---
+  colorVariants: {
+    // Use keys that match your CSS color classes (e.g., .color-option.lime, .color-option.orange)
+    // IMPORTANT: The keys should match the values in the `colors` array below.
+    "lime": [
+      "images/padel/advanced pro/advanced pro main (lime).jpeg", // Main image for Lime
+      "images/padel/advanced pro/advanced pro (9).jpeg",
+      "images/padel/advanced pro/advanced pro (1).jpeg",
+      "images/padel/advanced pro/advanced pro (5).jpeg",
+      "images/padel/advanced pro/advanced pro (3).jpeg",
+      "images/padel/advanced pro/advanced pro (11).jpeg",
+      "images/padel/advanced pro/advanced pro (12).jpeg",
+      "images/padel/advanced pro/advanced pro (13).jpeg",
+      "images/padel/advanced pro/advanced pro (4).jpeg"
+      
+      // Add paths for all images specifically for the Lime variant
+    ],
+    "orange": [
+               "images/padel/advanced pro/advanced pro main (orange).jpeg", // Main image for Orange (you need to have this file)
+              "images/padel/advanced pro/advanced pro (orange_1).jpeg",    // Replace with actual paths for Orange variant images
+               "images/padel/advanced pro/advanced pro (orange_2).jpeg",
+                 "images/padel/advanced pro/advanced pro (orange_3).jpeg",
+                 "images/padel/advanced pro/advanced pro (4).jpeg"
+                   
+                    // Add paths for all images specifically for the Orange variant
+                       // You will need to find or create these orange-specific images.
+                         ]
+                 // If there were more colors, you'd add them here as well.
+               },
+                    // Keep the `colors` array for generating the color option buttons
+               // Make sure the names here exactly match the keys in `colorVariants` (including case/spaces)
+               colors: ["lime", "orange"] // These must match the keys in `colorVariants`
+             // --- END NEW ---
+           },
             {
                 id: 3,
                 name: "Axion Match 50/50",
                 price: 12499,
-                image: "images/padel/axion match/axion match (2).jpeg",
+               // image: "images/padel/axion match/axion match (2).jpeg",
                 category: "padel",
                 quality: "Axion Match 50% Carbon 50% Glass Fiber",
                 description: "Perfect for intermediate players seeking a balance of durability and performance. 50% carbon and 50% glass fiber construction offers excellent control.",
@@ -2812,20 +2840,28 @@
                     { name: "Core", value: "EVA Medium 28mm" },
                     { name: "Frame", value: "Carbon-Glass Hybrid" }
                 ],
-                images: [
-                    "images/padel/axion match/axion match (1).jpeg",,
+                colorVariants: {
+    // Using "default" is common for single-color items
+    // Alternatively, use the actual color if applicable, e.g., "black"
+    "default": [
+      "images/padel/axion match/axion match (1).jpeg",
                     "images/padel/axion match/axion match (2).jpeg",
                     "images/padel/axion match/axion match (3).jpeg",
                     "images/padel/axion match/axion match (4).jpeg",
                     "images/padel/axion match/axion match (5).jpeg",
-                ],
-                colors: ["black",]
-            },
+      // ... include all images for this product here
+    ]
+    // Only one key because there's only one variant
+  },
+  // Define the colors array with the single key name
+  colors: ["default"] // Or ["black"] if you prefer
+  // --- END NEW ---
+},
             {
                 id: 4,
                 name: "Avon Match Glass Fiber",
                 price: 9000,
-                image: "images/padel/avon match/avon match main (blue).jpeg",
+                //image: "images/padel/avon match/avon match main (blue).jpeg",
                 category: "padel",
                 quality: "Avon Match 100% Glass Fiber",
                 description: "Entry-level racket perfect for beginners. 100% glass fiber construction provides durability and easy handling.",
@@ -2837,22 +2873,38 @@
                     { name: "Core", value: "EVA Hard 25mm" },
                     { name: "Frame", value: "Glass Fiber" }
                 ],
-                images: [
-                    "images/padel/avon match/avon match main (blue).jpeg",
-                    "images/padel/avon match/avon match main(orange).jpeg",
-                    "images/padel/avon match/avon match (3).jpeg",
-                    "images/padel/avon match/avon match (4).jpeg",
-                    "images/padel/avon match/avon match (5).jpeg",
-                    "images/padel/avon match/avon match (6).jpeg",
-                    "images/padel/avon match/avon match (8).jpeg",
-                    "images/padel/avon match/avon match (9).jpeg",
-                    "images/padel/avon match/avon match (10).jpeg",
-                    "images/padel/avon match/avon match (11).jpeg",
-                    "images/padel/avon match/avon match (7).jpeg",
-                    "images/padel/avon match/avon match (12).jpeg",
-                ],
-                colors: [ "blue", "orange"]
-            },
+                colorVariants: {
+    // Use keys that match your CSS color classes (e.g., .color-option.lime, .color-option.orange)
+    // IMPORTANT: The keys should match the values in the `colors` array below.
+    "blue": [
+      "images/padel/avon match/avon match main (blue).jpeg", // Main image for Lime
+      "images/padel/avon match/avon match (3).jpeg",
+      "images/padel/avon match/avon match (4).jpeg",
+      "images/padel/avon match/avon match (5).jpeg",
+      "images/padel/avon match/avon match (6).jpeg",
+      "images/padel/avon match/avon match (7).jpeg"
+      
+      
+      // Add paths for all images specifically for the Lime variant
+    ],
+    "orange": [
+               "images/padel/avon match/avon match main(orange).jpeg", // Main image for Orange (you need to have this file)
+              "images/padel/avon match/avon match (8).jpeg",    // Replace with actual paths for Orange variant images
+               "images/padel/avon match/avon match (9).jpeg",
+                 "images/padel/avon match/avon match (10).jpeg",
+                 "images/padel/avon match/avon match (11).jpeg",
+                 "images/padel/avon match/avon match (12).jpeg"
+                   
+                    // Add paths for all images specifically for the Orange variant
+                       // You will need to find or create these orange-specific images.
+                         ]
+                 // If there were more colors, you'd add them here as well.
+               },
+                    // Keep the `colors` array for generating the color option buttons
+               // Make sure the names here exactly match the keys in `colorVariants` (including case/spaces)
+               colors: ["blue", "orange"] // These must match the keys in `colorVariants`
+             // --- END NEW ---
+           },
             {
                 id: 5,
                 name: "Advanced Match Carbon",
@@ -2869,19 +2921,38 @@
                     { name: "Core", value: "Polymer Honeycomb" },
                     { name: "Grip", value: "Premium Cushioned" }
                 ],
-                images: [
-                    "images/pickle/advanced match/advanced match (2).jpeg",
-                    "images/pickle/advanced match/advanced match (1).jpeg",
-                    "images/pickle/advanced match/advanced match (3).jpeg",
-                    "images/pickle/advanced match/advanced match (4).jpeg",
-                    "images/pickle/advanced match/advanced match (5).jpeg",
-                    "images/pickle/advanced match/advanced match (6).jpeg",
-                    "images/pickle/advanced match/advanced match (7).jpeg",
-                    "images/pickle/advanced match/advanced match (8).jpeg",
-                    "images/pickle/advanced match/advanced match (9).jpeg",
-                ],
-                colors: ["black", " gold",]
-            },
+                colorVariants: {
+    // Use keys that match your CSS color classes (e.g., .color-option.lime, .color-option.orange)
+    // IMPORTANT: The keys should match the values in the `colors` array below.
+    "black": [
+      "images/pickle/advanced match/advanced match (5).jpeg", // Main image for Lime
+      "images/pickle/advanced match/advanced match (6).jpeg",
+      "images/pickle/advanced match/advanced match (7).jpeg",
+      "images/pickle/advanced match/advanced match (8).jpeg",
+      "images/pickle/advanced match/advanced match (9).jpeg",
+      
+      
+      
+      // Add paths for all images specifically for the Lime variant
+    ],
+    "gold": [
+               "images/pickle/advanced match/advanced match (1).jpeg", // Main image for Orange (you need to have this file)
+              "images/pickle/advanced match/advanced match (2).jpeg",    // Replace with actual paths for Orange variant images
+               "images/pickle/advanced match/advanced match (3).jpeg",
+                 "images/pickle/advanced match/advanced match (4).jpeg",
+                 "images/pickle/advanced match/advanced match (9).jpeg",
+                
+                   
+                    // Add paths for all images specifically for the Orange variant
+                       // You will need to find or create these orange-specific images.
+                         ]
+                 // If there were more colors, you'd add them here as well.
+               },
+                    // Keep the `colors` array for generating the color option buttons
+               // Make sure the names here exactly match the keys in `colorVariants` (including case/spaces)
+               colors: ["black", "gold"] // These must match the keys in `colorVariants`
+             // --- END NEW ---
+           },
             {
                 id: 6,
                 name: "Avon Match Glass Pickle",
@@ -2898,23 +2969,43 @@
                     { name: "Core", value: "Polymer Honeycomb" },
                     { name: "Grip", value: "Standard Cushioned" }
                 ],
-                images: [
-                    "images/pickle/avon match/avon match (6).jpeg",
-                    "images/pickle/avon match/avon match (5).jpeg",
-                    "images/pickle/avon match/avon match (7).jpeg",
-                    "images/pickle/avon match/avon match (8).jpeg",
-                    "images/pickle/avon match/avon match (9).jpeg",
-                    "images/pickle/avon match/avon match (12).jpeg",
-                    "images/pickle/avon match/avon match (10).jpeg",
-                    "images/pickle/avon match/avon match (11).jpeg",
-                    "images/pickle/avon match/avon match (1).jpeg",
-                    "images/pickle/avon match/avon match (8).jpeg",
-                    "images/pickle/avon match/avon match (2).jpeg",
-                    "images/pickle/avon match/avon match (3).jpeg",
-                    "images/pickle/avon match/avon match (4).jpeg",
-                ],
-                colors: ["orange", "green",]
-            }
+                colorVariants: {
+    // Use keys that match your CSS color classes (e.g., .color-option.lime, .color-option.orange)
+    // IMPORTANT: The keys should match the values in the `colors` array below.
+    "green": [
+      "images/pickle/avon match/avon match (5).jpeg", // Main image for Lime
+      "images/pickle/avon match/avon match (6).jpeg",
+      "images/pickle/avon match/avon match (7).jpeg",
+      "images/pickle/avon match/avon match (8).jpeg",
+      "images/pickle/avon match/avon match (9).jpeg",
+      "images/pickle/avon match/avon match (2).jpeg",
+      "images/pickle/avon match/avon match (3).jpeg",
+      "images/pickle/avon match/avon match (4).jpeg"
+      
+      
+      
+      // Add paths for all images specifically for the Lime variant
+    ],
+    "orange": [
+               "images/pickle/avon match/avon match (10).jpeg", // Main image for Orange (you need to have this file)
+              "images/pickle/avon match/avon match (11).jpeg",    // Replace with actual paths for Orange variant images
+               "images/pickle/avon match/avon match (12).jpeg",
+                 "images/pickle/avon match/avon match (1).jpeg",
+                 "images/pickle/avon match/avon match (2).jpeg",
+                 "images/pickle/avon match/avon match (3).jpeg",
+                 "images/pickle/avon match/avon match (4).jpeg"
+                
+                   
+                    // Add paths for all images specifically for the Orange variant
+                       // You will need to find or create these orange-specific images.
+                         ]
+                 // If there were more colors, you'd add them here as well.
+               },
+                    // Keep the `colors` array for generating the color option buttons
+               // Make sure the names here exactly match the keys in `colorVariants` (including case/spaces)
+               colors: ["green", "orange"] // These must match the keys in `colorVariants`
+             // --- END NEW ---
+           }
         ];
         // Open cart
         cartIcon.addEventListener('click', () => {
@@ -2934,114 +3025,159 @@
             checkoutPage.classList.remove('active');
         });
         // Add to cart
-        const addToCartButtons = document.querySelectorAll('.add-to-cart');
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const id = parseInt(e.target.dataset.id);
-                const product = products.find(p => p.id === id);
-                if (product) {
-                    addToCart(product);
-                    showNotification(`${product.name} added to cart!`);
-                }
-            });
-        });
-        // Add to cart from detail page
-        addToCartDetail.addEventListener('click', () => {
-            const id = parseInt(addToCartDetail.dataset.id);
-            const product = products.find(p => p.id === id);
-            const quantity = parseInt(detailQuantity.value);
+        // UPDATED EVENT LISTENER for main product grid Add to Cart buttons
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const productId = parseInt(e.target.dataset.id);
+        // const product = products.find(p => p.id === productId); // Not needed anymore
+        if (productId) {
+            // Call the NEW addToCart function with ID, quantity (1), and null for color
+            addToCart(productId, 1, null);
+            // Find product name for notification (since we don't pass the object anymore)
+            const product = products.find(p => p.id === productId);
             if (product) {
-                addToCart(product, quantity);
                 showNotification(`${product.name} added to cart!`);
-                cartSidebar.classList.add('active');
-                overlay.classList.add('active');
-                updateCartDisplay();
             }
-        });
-        // Add to cart function
-        function addToCart(product, quantity = 1) {
-            const existingItem = cart.find(item => item.id === product.id);
-            if (existingItem) {
-                existingItem.quantity += quantity;
+            updateCartCount();
+        } else {
+            console.error("Invalid Product ID from product grid button:", e.target.dataset.id);
+        }
+    });
+});
+    
+
+
+// Add to cart function - MODIFIED TO UPDATE GLOBAL CART VARIABLE
+function addToCart(productId, quantity = 1, selectedColor = null) {
+  // --- MODIFIED: Work directly with the global 'cart' variable ---
+  // Remove this line: let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  // --- END MODIFIED ---
+
+  // --- MODIFIED: Find existing item with same ID AND color IN THE GLOBAL CART ---
+  const existingItemIndex = cart.findIndex(item => item.id === productId && item.selectedColor === selectedColor);
+  // --- END MODIFIED ---
+
+  if (existingItemIndex > -1) {
+    // Item with same ID and color exists, update quantity IN THE GLOBAL CART
+    cart[existingItemIndex].quantity += quantity;
+  } else {
+    // Item doesn't exist in cart, add new item
+    // Find the full product object
+    const productToAdd = products.find(p => p.id === productId);
+    if (productToAdd) {
+      // --- MODIFIED: Create cart item object, including color and correct image ---
+      const cartItem = {
+        id: productToAdd.id,
+        name: productToAdd.name,
+        price: productToAdd.price,
+        // Use the image for the selected color if available
+        image: (productToAdd.colorVariants && selectedColor && productToAdd.colorVariants[selectedColor] && productToAdd.colorVariants[selectedColor][0]) ||
+               (productToAdd.colorVariants && productToAdd.colors && productToAdd.colors.length > 0 && productToAdd.colorVariants[productToAdd.colors[0]] && productToAdd.colorVariants[productToAdd.colors[0]][0]) || // Fallback to first available color's first image
+               (productToAdd.images && productToAdd.images[0]) || // Fallback to old images array (if you still have product.images)
+               'images/placeholder-image.jpg', // Ultimate fallback placeholder
+        quantity: quantity,
+        selectedColor: selectedColor // Store the selected color
+        // Optionally store quality if needed elsewhere in cart
+        // quality: productToAdd.quality
+      };
+      // Add to the GLOBAL cart array
+      cart.push(cartItem);
+      // --- END MODIFIED ---
+    } else {
+      console.error(`Product with ID ${productId} not found.`);
+      return; // Don't add if product not found
+    }
+  }
+
+  // Save the UPDATED GLOBAL cart back to localStorage
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  // Update the cart display (sidebar) - this will now use the updated global 'cart'
+  updateCartDisplay();
+}
+// - END MODIFIED -
+// --- END MODIFIED ---
+       // Update cart display
+function updateCartDisplay() {
+    // Update cart count
+    updateCartCount();
+    // Update cart items
+    cartItems.innerHTML = '';
+    if (cart.length === 0) {
+        cartItems.innerHTML = '<p>Your cart is empty</p>';
+        cartTotal.textContent = 'PKR 0';
+        return;
+    }
+    let total = 0;
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        // --- MODIFIED: Prepare name and image based on color selection ---
+        let displayName = item.name;
+        if (item.selectedColor) {
+            // Optionally format the color name (e.g., capitalize)
+            const formattedColor = item.selectedColor.charAt(0).toUpperCase() + item.selectedColor.slice(1);
+            displayName += ` (${formattedColor})`;
+        }
+        const displayImage = item.image || 'images/placeholder-image.jpg'; // Fallback image
+        const imageAlt = `${item.name} - ${item.selectedColor || 'Default'}`;
+        // --- END MODIFIED ---
+        const cartItemElement = document.createElement('div');
+        cartItemElement.className = 'cart-item';
+        // --- MODIFIED: Use displayName and displayImage in the HTML ---
+        cartItemElement.innerHTML = `
+            <div class="cart-item-img">
+                <img src="${displayImage}" alt="${imageAlt}" style="max-width: 80%; max-height: 80%;">
+            </div>
+            <div class="cart-item-details">
+                <div class="cart-item-name">${displayName}</div>
+                <div class="cart-item-price">PKR ${item.price.toLocaleString()}</div>
+                <div class="cart-item-quantity">
+                    <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                    <input type="text" class="quantity-input" value="${item.quantity}" readonly>
+                    <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                    <button class="remove-item" data-id="${item.id}">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+        // --- END MODIFIED ---
+        cartItems.appendChild(cartItemElement);
+    });
+    cartTotal.textContent = `PKR ${total.toLocaleString()}`;
+    // Add event listeners to quantity buttons
+    document.querySelectorAll('.minus').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const id = parseInt(e.target.dataset.id);
+            const item = cart.find(item => item.id === id);
+            if (item.quantity > 1) {
+                item.quantity -= 1;
             } else {
-                cart.push({
-                    id: product.id,
-                    name: product.name,
-                    price: product.price,
-                    image: product.image,
-                    quality: product.quality,
-                    quantity: quantity
-                });
+                cart = cart.filter(item => item.id !== id);
             }
-            updateCartCount();
-        }
-        // Update cart display
-        function updateCartDisplay() {
-            // Update cart count
-            updateCartCount();
-            // Update cart items
-            cartItems.innerHTML = '';
-            if (cart.length === 0) {
-                cartItems.innerHTML = '<p>Your cart is empty</p>';
-                cartTotal.textContent = 'PKR 0';
-                return;
-            }
-            let total = 0;
-            cart.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                total += itemTotal;
-                const cartItemElement = document.createElement('div');
-                cartItemElement.className = 'cart-item';
-                cartItemElement.innerHTML = `
-                    <div class="cart-item-img">
-                        <img src="${item.image}" alt="${item.name}" style="max-width: 80%; max-height: 80%;">
-                    </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-name">${item.name}</div>
-                        <div class="cart-item-price">PKR ${item.price.toLocaleString()}</div>
-                        <div class="cart-item-quantity">
-                            <button class="quantity-btn minus" data-id="${item.id}">-</button>
-                            <input type="text" class="quantity-input" value="${item.quantity}" readonly>
-                            <button class="quantity-btn plus" data-id="${item.id}">+</button>
-                            <button class="remove-item" data-id="${item.id}">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </div>
-                    </div>
-                `;
-                cartItems.appendChild(cartItemElement);
-            });
-            cartTotal.textContent = `PKR ${total.toLocaleString()}`;
-            // Add event listeners to quantity buttons
-            document.querySelectorAll('.minus').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    const id = parseInt(e.target.dataset.id);
-                    const item = cart.find(item => item.id === id);
-                    if (item.quantity > 1) {
-                        item.quantity -= 1;
-                    } else {
-                        cart = cart.filter(item => item.id !== id);
-                    }
-                    updateCartDisplay();
-                });
-            });
-            document.querySelectorAll('.plus').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    const id = parseInt(e.target.dataset.id);
-                    const item = cart.find(item => item.id === id);
-                    item.quantity += 1;
-                    updateCartDisplay();
-                });
-            });
-            document.querySelectorAll('.remove-item').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    const id = parseInt(e.target.dataset.id);
-                    cart = cart.filter(item => item.id !== id);
-                    updateCartDisplay();
-                });
-            });
-        }
+            updateCartDisplay();
+        });
+    });
+    document.querySelectorAll('.plus').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const id = parseInt(e.target.dataset.id);
+            const item = cart.find(item => item.id === id);
+            item.quantity += 1;
+            updateCartDisplay();
+        });
+    });
+    document.querySelectorAll('.remove-item').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const id = parseInt(e.target.dataset.id);
+            cart = cart.filter(item => item.id !== id);
+            updateCartDisplay();
+        });
+    });
+}
         // Update cart count
         function updateCartCount() {
             const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
@@ -3196,38 +3332,49 @@ proceedCheckout.addEventListener('click', () => {
                 }
             });
         });
-        // Show product detail
-        function showProductDetail(product) {
-            // Set main image
-            detailImage.src = product.images[0];
-            detailTitle.textContent = product.name;
-            detailPrice.textContent = `PKR ${product.price.toLocaleString()}`;
-            detailDescription.textContent = product.description;
-            // Set quality badge
-            detailQualityBadge.textContent = product.quality;
-            detailQualityBadge.className = 'quality-badge-detail';
-            if (product.quality.includes('Attack')) {
-                detailQualityBadge.classList.add('quality-attack');
-            } else if (product.quality.includes('Advanced Pro') || product.quality.includes('Advanced Match')) {
-                detailQualityBadge.classList.add('quality-advanced-pro');
-            } else if (product.quality.includes('Axion')) {
-                detailQualityBadge.classList.add('quality-axion-match');
+        // Show product detail - MODIFIED FOR COLOR VARIANTS
+function showProductDetail(product) {
+    // --- MODIFIED LOGIC FOR COLOR AND IMAGE HANDLING ---
+    let currentSelectedColor = null; // Variable to track the selected color for this product view
+
+    // Function to update the main image and thumbnails based on the selected color
+    function updateImagesForColor(selectedColor) {
+        let imagesToShow = [];
+
+        // Determine which images to show based on the selected color
+        if (product.colorVariants && product.colorVariants[selectedColor]) {
+            imagesToShow = product.colorVariants[selectedColor];
+        } else {
+            // Fallback: Try to get images for the first available color variant
+            const firstAvailableColor = product.colors && product.colors.length > 0 ? product.colors[0] : null;
+            if (firstAvailableColor && product.colorVariants[firstAvailableColor]) {
+                imagesToShow = product.colorVariants[firstAvailableColor];
+                console.warn(`Images for color '${selectedColor}' not found for product ${product.id}, using '${firstAvailableColor}' instead.`);
             } else {
-                detailQualityBadge.classList.add('quality-avon-match');
+                // Ultimate fallback to old flat images array or empty
+                imagesToShow = product.images || [];
+                console.warn(`No color-specific images found for product ${product.id}, using fallback images.`);
             }
-            // Populate specs
-            detailSpecs.innerHTML = '';
-            product.specs.forEach(spec => {
-                const li = document.createElement('li');
-                li.innerHTML = `<span class="spec-name">${spec.name}:</span> <span class="spec-value">${spec.value}</span>`;
-                detailSpecs.appendChild(li);
-            });
+        }
+
+        // Clear existing thumbnails
+        thumbnailImages.innerHTML = '';
+
+        if (imagesToShow.length > 0) {
+            // Set main image to the first one of the selected/available color
+            detailImage.src = imagesToShow[0];
+            detailImage.alt = `${product.name} - ${selectedColor || 'Default'} View 1`;
+
             // Populate thumbnails
-            thumbnailImages.innerHTML = '';
-            product.images.forEach((image, index) => {
+            imagesToShow.forEach((image, index) => {
                 const thumbnail = document.createElement('div');
-                thumbnail.className = `thumbnail ${index === 0 ? 'active' : ''}`;
-                thumbnail.innerHTML = `<img src="${image}" alt="${product.name} view ${index + 1}">`;
+                thumbnail.className = `thumbnail ${index === 0 ? 'active' : ''}`; // Mark first as active
+                // Create image element for thumbnail
+                const thumbImg = document.createElement('img');
+                thumbImg.src = image;
+                thumbImg.alt = `${product.name} - ${selectedColor || 'Default'} View ${index + 1}`;
+                thumbnail.appendChild(thumbImg);
+
                 thumbnail.addEventListener('click', () => {
                     // Remove active class from all thumbnails
                     document.querySelectorAll('.thumbnail').forEach(thumb => {
@@ -3237,33 +3384,133 @@ proceedCheckout.addEventListener('click', () => {
                     thumbnail.classList.add('active');
                     // Update main image
                     detailImage.src = image;
+                    detailImage.alt = thumbImg.alt; // Update alt text
                 });
                 thumbnailImages.appendChild(thumbnail);
             });
-            // Populate color options
-            colorVariants.innerHTML = '';
-            product.colors.forEach(color => {
-                const colorOption = document.createElement('div');
-                colorOption.className = `color-option ${color} ${color === product.colors[0] ? 'active' : ''}`;
-                colorOption.dataset.color = color;
-                colorOption.addEventListener('click', () => {
-                    // Remove active class from all color options
-                    document.querySelectorAll('.color-option').forEach(option => {
-                        option.classList.remove('active');
-                    });
-                    // Add active class to clicked option
-                    colorOption.classList.add('active');
-                });
-                colorVariants.appendChild(colorOption);
-            });
-            // Set add to cart button data
-            addToCartDetail.dataset.id = product.id;
-            // Show detail page
-            productDetail.classList.add('active');
-            overlay.classList.add('active');
-            // Scroll to top of detail page
-            window.scrollTo(0, 0);
+        } else {
+            // Handle case where no images are available
+            detailImage.src = 'images/placeholder-image.jpg'; // Use a placeholder image path
+            detailImage.alt = 'Image not available';
+            thumbnailImages.innerHTML = '<p>No images available for this variant.</p>';
+            console.warn(`No images available for product ${product.id} color ${selectedColor}`);
         }
+    }
+
+    // Determine the initial color to show (use the first one in the list)
+    if (product.colors && product.colors.length > 0) {
+        currentSelectedColor = product.colors[0]; // Default to the first color
+    } else {
+        // Handle case where no colors are defined (e.g., for products without variants)
+        currentSelectedColor = 'default'; // Or just leave it null
+    }
+
+    // Initial image update based on the determined initial color
+    updateImagesForColor(currentSelectedColor);
+
+    // Populate color options and attach click handlers
+    colorVariants.innerHTML = '';
+    if (product.colors && product.colors.length > 0) {
+        product.colors.forEach(color => {
+            const colorOption = document.createElement('div');
+            // Ensure class name matches your CSS (e.g., 'red', 'blue')
+            // Use class 'active' for the initially selected color
+            colorOption.className = `color-option ${color} ${color === currentSelectedColor ? 'active' : ''}`;
+            colorOption.dataset.color = color; // Store color identifier
+
+            colorOption.addEventListener('click', () => {
+                // Remove 'active' class from all color options
+                document.querySelectorAll('.color-option').forEach(option => {
+                    option.classList.remove('active');
+                });
+                // Add 'active' class to the clicked option
+                colorOption.classList.add('active');
+
+                // Update the tracked selected color
+                currentSelectedColor = color;
+
+                // Update images based on the newly selected color
+                updateImagesForColor(currentSelectedColor);
+            });
+
+            colorVariants.appendChild(colorOption);
+        });
+    } else {
+        // Handle case where no color variants are defined for this product
+        colorVariants.innerHTML = '<p>Color options not available for this product.</p>';
+    }
+    // --- END MODIFIED LOGIC ---
+
+    // --- KEEP THE REST OF THE EXISTING showProductDetail LOGIC ---
+    // Set title, price, description, quality badge, specs
+    detailTitle.textContent = product.name;
+    detailPrice.textContent = `PKR ${product.price.toLocaleString()}`;
+    detailDescription.textContent = product.description;
+
+    // Set quality badge
+    detailQualityBadge.textContent = product.quality;
+    detailQualityBadge.className = 'quality-badge-detail';
+    if (product.quality.includes('Attack')) {
+        detailQualityBadge.classList.add('quality-attack');
+    } else if (product.quality.includes('Advanced Pro') || product.quality.includes('Advanced Match')) {
+        detailQualityBadge.classList.add('quality-advanced-pro');
+    } else if (product.quality.includes('Axion')) {
+        detailQualityBadge.classList.add('quality-axion-match');
+    } else {
+        detailQualityBadge.classList.add('quality-avon-match');
+    }
+
+    // Populate specs (unchanged)
+    detailSpecs.innerHTML = '';
+    product.specs.forEach(spec => {
+        const li = document.createElement('li');
+        li.innerHTML = `<span class="spec-name">${spec.name}:</span> <span class="spec-value">${spec.value}</span>`;
+        detailSpecs.appendChild(li);
+    });
+
+    // Ensure the "Add to Cart" button knows which product
+ // ... (previous code inside showProductDetail)
+
+// Set add to cart button data
+addToCartDetail.dataset.id = product.id;
+
+// --- NEW: Add Event Listener for Add to Cart Button (INSIDE showProductDetail scope) ---
+// This ensures `currentSelectedColor` is accessible
+addToCartDetail.addEventListener('click', function handleAddToCart() {
+  const productId = parseInt(addToCartDetail.dataset.id);
+  const quantity = parseInt(detailQuantity.value) || 1;
+  
+  // `currentSelectedColor` is available here because this listener is defined inside `showProductDetail`
+  const selectedColor = currentSelectedColor;
+
+  console.log("Adding to cart:", { productId, quantity, selectedColor }); // Debug log
+
+  if (productId && !isNaN(productId)) { // Basic check for valid ID
+    // Call the UPDATED addToCart function with ID, quantity, and selected color
+    addToCart(productId, quantity, selectedColor);
+    showNotification(`${product.name} added to cart!`);
+    // Optionally open the cart sidebar
+    cartSidebar.classList.add('active');
+    overlay.classList.add('active');
+    updateCartDisplay();
+  } else {
+    console.error("Invalid Product ID for Add to Cart button on detail page:", productId);
+    showNotification('Error adding item to cart.');
+  }
+  
+  // --- Remove this listener after it's used once to prevent duplicates ---
+  // This is important because showProductDetail can be called multiple times
+  addToCartDetail.removeEventListener('click', handleAddToCart);
+});
+// --- END NEW ---
+
+// Show detail page
+productDetail.classList.add('active');
+overlay.classList.add('active');
+// Scroll to top of detail page
+window.scrollTo(0, 0);
+    // --- END KEEPING EXISTING LOGIC ---
+}
         // Back to products
         backToProducts.addEventListener('click', (e) => {
             e.preventDefault();
@@ -3459,33 +3706,51 @@ proceedCheckout.addEventListener('click', () => {
             });
         });
 
-        // --- Updated populateCheckoutSummary Function ---
-        function populateCheckoutSummary() {
-            summaryItems.innerHTML = '';
-            let subtotal = 0;
-            cart.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                subtotal += itemTotal;
-                const summaryItem = document.createElement('div');
-                summaryItem.className = 'summary-item';
-                summaryItem.innerHTML = `
-                    <div>
-                        <div>${item.name} × ${item.quantity}</div>
-                        <div style="font-size: 14px; color: #aaa;">${item.quality}</div>
-                    </div>
-                    <div>PKR ${itemTotal.toLocaleString()}</div>
-                `;
-                summaryItems.appendChild(summaryItem);
-            });
-            subtotalElement.textContent = `PKR ${subtotal.toLocaleString()}`;
-            // Initially set total to subtotal (no discount applied)
-            orderTotalElement.textContent = `PKR ${subtotal.toLocaleString()}`;
-            // Ensure discount row is hidden initially
-            discountRow.style.display = 'none';
+       // - Updated populateCheckoutSummary Function -
+function populateCheckoutSummary() {
+    summaryItems.innerHTML = '';
+    let subtotal = 0;
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
 
-            // Reset payment method selection to default (Card)
-            resetPaymentMethodSelection();
+        // --- MODIFIED: Prepare name display to include color info ---
+        let displaySummaryName = item.name;
+        if (item.selectedColor) {
+            // Optionally format the color name (e.g., capitalize)
+            const formattedColor = item.selectedColor.charAt(0).toUpperCase() + item.selectedColor.slice(1);
+            displaySummaryName += ` <span style="font-size: 12px; color: #777;">(${formattedColor})</span>`; // Smaller, grey color for color
         }
+        // Keep the quality on the next line as before
+        // --- END MODIFIED ---
+
+        const summaryItem = document.createElement('div');
+        summaryItem.className = 'summary-item';
+        // --- MODIFIED: Use displaySummaryName in the HTML ---
+        summaryItem.innerHTML = `
+            <div>
+                <div>${displaySummaryName} × ${item.quantity}</div>
+                <div style="font-size: 14px; color: #aaa;">${item.quality}</div>
+            </div>
+            <div>PKR ${itemTotal.toLocaleString()}</div>
+        `;
+        // --- END MODIFIED ---
+        summaryItems.appendChild(summaryItem);
+    });
+    subtotalElement.textContent = `PKR ${subtotal.toLocaleString()}`;
+
+    // Initially set total to subtotal (no discount applied)
+    orderTotalElement.textContent = `PKR ${subtotal.toLocaleString()}`;
+
+    // Ensure discount row is hidden initially when summary is populated
+    discountRow.style.display = 'none';
+
+    // Reset payment method selection UI (if the function exists)
+    if (typeof resetPaymentMethodSelection === 'function') {
+        resetPaymentMethodSelection();
+    }
+}
+// - End Updated populateCheckoutSummary Function -
 
         // Function to reset payment method selection to default (Card)
         function resetPaymentMethodSelection() {
